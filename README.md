@@ -1,6 +1,6 @@
 <<<<<<< HEAD
 
-## 👥 Team Roles
+## Team Roles
 
 ### 1. Backend Developer
 
@@ -58,7 +58,7 @@
 - Bridge communication between stakeholders and the development team.
 - Define KPIs and evaluate project performance against objectives.
 
-## 🧩 Technology Stack
+## Technology Stack
 
 This project integrates multiple technologies to simulate a real-world full-stack application.  
 Each component of the stack plays a specific role in achieving scalability, performance, and maintainability.
@@ -96,14 +96,14 @@ It provides tools for handling authentication, ORM (Object Relational Mapping), 
 
 **React.js** — A JavaScript library for building interactive user interfaces that consume data from the backend API.
 
-## 🗄️ Database Design
+## Database Design
 
 The Airbnb Clone project uses a **relational database model** to efficiently store and manage data.  
 Below is an overview of the core entities, their key fields, and relationships between them.
 
 ---
 
-### 🧍 User
+### User
 
 Represents individuals using the platform — either as guests or hosts.
 
@@ -122,7 +122,7 @@ Represents individuals using the platform — either as guests or hosts.
 
 ---
 
-### 🏠 Property
+### Property
 
 Represents the listings created by hosts.
 
@@ -141,7 +141,7 @@ Represents the listings created by hosts.
 
 ---
 
-### 📅 Booking
+### Booking
 
 Represents a reservation made by a user for a property.
 
@@ -154,7 +154,7 @@ Represents a reservation made by a user for a property.
 - `check_out_date` — End date of stay.
 - `status` — Indicates if the booking is _pending_, _confirmed_, or _cancelled_.
 
-## 🚀 Feature Breakdown
+## Feature Breakdown
 
 ### 1. User Management
 
@@ -181,7 +181,7 @@ This feature ensures secure and reliable payments while recording transaction hi
 Enables users to post ratings and feedback for properties they have stayed at.  
 It helps maintain quality, builds trust among users, and informs future guests about the property experience.
 
-## 🔒 API Security
+## API Security
 
 Ensuring the security of backend APIs is critical to protect user data, financial transactions, and system integrity.
 
@@ -192,7 +192,7 @@ Ensuring the security of backend APIs is critical to protect user data, financia
 - **Rate Limiting:** Prevents abuse by limiting the number of requests a user or client can make within a time period, mitigating denial-of-service attacks.
 - **Data Validation & Encryption:** Protects sensitive information like passwords and payment data from being compromised.
 
-## ⚙️ CI/CD Pipeline
+## CI/CD Pipeline
 
 Continuous Integration (CI) and Continuous Deployment (CD) pipelines automate the process of testing, building, and deploying code, ensuring faster and more reliable development cycles.
 
