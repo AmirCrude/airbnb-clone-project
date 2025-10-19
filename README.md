@@ -1,217 +1,198 @@
-<<<<<<< HEAD
+# Airbnb Clone Project
 
-## Team Roles
+## Project Overview
 
-### 1. Backend Developer
+The Airbnb Clone Project is a backend-focused, real-world application designed to simulate a booking platform similar to Airbnb.  
+The project provides hands-on experience with backend systems, database design, API development, security practices, and modern software development workflows.
 
-**Responsibilities:**
+## Project Goals
 
-- Design and implement API endpoints using Django and Django REST Framework.
-- Integrate business logic for user management, bookings, payments, and reviews.
-- Ensure code scalability, maintainability, and performance optimization.
-
-### 2. Database Administrator (DBA)
-
-**Responsibilities:**
-
-- Design and maintain the relational database structure.
-- Implement indexing, normalization, and backup strategies.
-- Ensure data integrity, performance tuning, and efficient query optimization.
-
-### 3. DevOps Engineer
-
-**Responsibilities:**
-
-- Configure and maintain CI/CD pipelines for automated testing and deployment.
-- Manage Docker containers, cloud environments, and scaling strategies.
-- Monitor application performance and implement logging/alert systems.
-
-### 4. QA Engineer (Quality Assurance)
-
-**Responsibilities:**
-
-- Develop and execute test cases to validate backend functionality.
-- Conduct integration and regression testing before deployment.
-- Ensure bug tracking and coordinate with developers to fix issues.
-
-### 5. Project Manager (from ITRexGroup blog)
-
-**Responsibilities:**
-
-- Oversee project progress, ensuring tasks align with deadlines and goals.
-- Facilitate communication between development, QA, and DevOps teams.
-- Manage timelines, risk assessment, and team coordination.
-
-### 6. UI/UX Designer (from ITRexGroup blog)
-
-**Responsibilities:**
-
-- Design user-friendly interfaces that enhance the booking experience.
-- Collaborate with backend developers to align API functionality with user flows.
-- Create wireframes, mockups, and prototypes for usability testing.
-
-### 7. Business Analyst (from ITRexGroup blog)
-
-**Responsibilities:**
-
-- Analyze project requirements and translate them into technical specifications.
-- Bridge communication between stakeholders and the development team.
-- Define KPIs and evaluate project performance against objectives.
+- Implement secure user registration, authentication, and profile management.
+- Build property management functionality for hosts.
+- Enable users to make and manage bookings.
+- Process payments securely and efficiently.
+- Allow users to leave reviews and ratings for properties.
+- Optimize database performance and caching for scalability.
+- Set up automated testing and deployment pipelines to maintain high-quality code.
 
 ## Technology Stack
 
-This project integrates multiple technologies to simulate a real-world full-stack application.  
-Each component of the stack plays a specific role in achieving scalability, performance, and maintainability.
+The project uses a combination of backend, database, and infrastructure technologies to achieve a robust and scalable application.
 
 ### Backend Framework
 
-**Django** — A high-level Python web framework used to build robust and scalable backend systems.  
-It provides tools for handling authentication, ORM (Object Relational Mapping), and RESTful APIs efficiently.
+**Django** — A high-level Python web framework used to implement the backend logic, handle routing, authentication, and ORM for database interactions.
+
+**Django REST Framework** — Extends Django to create RESTful APIs, simplifying CRUD operations for users, properties, bookings, payments, and reviews.
 
 ### Database
 
-**MySQL** — A relational database management system used to store and manage structured data such as users, bookings, and listings.
+**PostgreSQL** — A relational database used to store structured data such as users, properties, bookings, payments, and reviews with integrity and reliability.
 
 ### API Query Language
 
-**GraphQL** — Enables flexible and efficient data retrieval for clients by allowing them to specify exactly what data they need.
+**GraphQL** — Provides flexible and efficient querying, allowing clients to retrieve only the data they need, reducing bandwidth usage and improving performance.
+
+### Task Queue
+
+**Celery** — Handles asynchronous tasks, such as sending notifications and processing payments, to improve application responsiveness.
+
+### Cache and Session Management
+
+**Redis** — Serves as a cache to speed up frequent database queries and manages session data for logged-in users.
 
 ### Containerization
 
-**Docker** — Used to package the application into containers for consistent deployment across different environments.
+**Docker** — Ensures consistent development and deployment environments across different systems, simplifying setup and scaling.
 
 ### Version Control
 
-**Git & GitHub** — Used for source code management, collaboration, and version control throughout the project lifecycle.
+**Git & GitHub** — Facilitates source code management, team collaboration, and version tracking.
 
-### Continuous Integration / Deployment (CI/CD)
+### CI/CD Pipelines
 
-**GitHub Actions** — Automates testing, builds, and deployment workflows, ensuring efficient and reliable development pipelines.
+**GitHub Actions** — Automates testing, builds, and deployment, ensuring faster and more reliable development cycles.
 
-### Security & Authentication
+---
 
-**JWT (JSON Web Tokens)** — Implements secure user authentication and API access control.
+## Team Roles
 
-### Frontend (Optional for Full Stack Integration)
+### Backend Developer
 
-**React.js** — A JavaScript library for building interactive user interfaces that consume data from the backend API.
+Responsible for implementing API endpoints, integrating business logic, and ensuring scalable and maintainable code.
+
+### Database Administrator
+
+Designs and maintains the relational database structure, optimizes queries, and ensures data integrity.
+
+### DevOps Engineer
+
+Manages deployment, CI/CD pipelines, containerization, and monitors system performance.
+
+### QA Engineer
+
+Develops and executes test cases, performs integration and regression testing, and ensures high-quality software delivery.
+
+### Project Manager
+
+Oversees project progress, coordinates teams, and ensures tasks align with deadlines and goals.
+
+### UI/UX Designer
+
+Designs user-friendly interfaces and collaborates with backend developers to ensure API functionality aligns with user flows.
+
+### Business Analyst
+
+Analyzes project requirements, translates them into technical specifications, and monitors project performance.
+
+---
 
 ## Database Design
 
-The Airbnb Clone project uses a **relational database model** to efficiently store and manage data.  
-Below is an overview of the core entities, their key fields, and relationships between them.
-
----
+The database structure uses relational principles to maintain consistency and efficiency.
 
 ### User
 
-Represents individuals using the platform — either as guests or hosts.
+Represents guests and hosts.
 
-**Key Fields:**
-
-- `id` — Unique identifier for each user.
-- `username` — The user’s chosen display name.
-- `email` — Used for authentication and notifications.
-- `password` — Securely hashed user password.
-- `role` — Defines if the user is a _guest_ or _host_.
-
-**Relationships:**
-
-- A **user** can own multiple **properties**.
-- A **user** can make multiple **bookings**.
-
----
+- id (unique identifier)
+- username
+- email
+- password
+- role (guest or host)
+  **Relationships:** Can own multiple properties and make multiple bookings.
 
 ### Property
 
-Represents the listings created by hosts.
+Represents a listing created by a host.
 
-**Key Fields:**
-
-- `id` — Unique identifier for each property.
-- `owner_id` — Foreign key linking to the `User` who owns it.
-- `title` — Property name or title.
-- `description` — Details about the property.
-- `price_per_night` — Cost per night of stay.
-
-**Relationships:**
-
-- A **property** belongs to one **user (host)**.
-- A **property** can have multiple **bookings** and **reviews**.
-
----
+- id
+- owner_id (foreign key to User)
+- title
+- description
+- price_per_night
+  **Relationships:** Belongs to one User; can have multiple bookings and reviews.
 
 ### Booking
 
 Represents a reservation made by a user for a property.
 
-**Key Fields:**
+- id
+- user_id (foreign key to User)
+- property_id (foreign key to Property)
+- check_in_date
+- check_out_date
+- status (pending, confirmed, cancelled)
+  **Relationships:** Belongs to one User and one Property; may have one Payment.
 
-- `id` — Unique identifier for each booking.
-- `user_id` — Foreign key linking to the user who booked.
-- `property_id` — Foreign key linking to the property booked.
-- `check_in_date` — Start date of stay.
-- `check_out_date` — End date of stay.
-- `status` — Indicates if the booking is _pending_, _confirmed_, or _cancelled_.
+### Payment
+
+Handles financial transactions related to bookings.
+
+- id
+- booking_id (foreign key to Booking)
+- amount
+- payment_method
+- status (successful, failed, refunded)
+  **Relationships:** Belongs to one Booking.
+
+### Review
+
+Captures feedback and ratings from users after a stay.
+
+- id
+- user_id (foreign key to User)
+- property_id (foreign key to Property)
+- rating (1–5)
+- comment
+  **Relationships:** Belongs to one User and one Property.
+
+---
 
 ## Feature Breakdown
 
-### 1. User Management
+### User Management
 
-Handles user registration, authentication, and profile management.  
-It allows users to create accounts, securely log in, and manage personal details, forming the foundation for interacting with the platform.
+Handles user registration, authentication, and profile management. Enables users to create accounts, securely log in, and manage personal information.
 
-### 2. Property Management
+### Property Management
 
-Allows hosts to create, update, and delete property listings.  
-This feature ensures that property data, availability, and pricing are accurately maintained for potential guests.
+Allows hosts to create, update, and delete property listings, ensuring accurate availability and pricing information.
 
-### 3. Booking System
+### Booking System
 
-Manages reservations made by users for properties.  
-It tracks check-in and check-out dates, booking status, and ensures that availability is properly updated.
+Manages reservations, tracks check-in and check-out dates, and ensures property availability is correctly updated.
 
-### 4. Payment Processing
+### Payment Processing
 
-Handles all financial transactions related to bookings.  
-This feature ensures secure and reliable payments while recording transaction history for users and hosts.
+Handles all transactions related to bookings, maintaining security and reliability in financial operations.
 
-### 5. Review System
+### Review System
 
-Enables users to post ratings and feedback for properties they have stayed at.  
-It helps maintain quality, builds trust among users, and informs future guests about the property experience.
+Allows users to post ratings and comments for properties, helping build trust and guide future guests.
+
+---
 
 ## API Security
 
-Ensuring the security of backend APIs is critical to protect user data, financial transactions, and system integrity.
+Securing the backend APIs is critical to protect user data, financial transactions, and system integrity.
 
-### Key Security Measures:
+- **Authentication (JWT):** Ensures only authorized users can access API endpoints.
+- **Authorization:** Controls which actions each user can perform, preventing unauthorized modifications.
+- **Rate Limiting:** Prevents abuse by limiting excessive requests, reducing the risk of denial-of-service attacks.
+- **Data Validation & Encryption:** Protects sensitive information, including passwords and payment details, from exposure.
 
-- **Authentication (JWT):** Verifies the identity of users before granting access to endpoints, preventing unauthorized access.
-- **Authorization:** Ensures users can only perform actions they are permitted to (e.g., a guest cannot edit another host's property).
-- **Rate Limiting:** Prevents abuse by limiting the number of requests a user or client can make within a time period, mitigating denial-of-service attacks.
-- **Data Validation & Encryption:** Protects sensitive information like passwords and payment data from being compromised.
+---
 
 ## CI/CD Pipeline
 
-Continuous Integration (CI) and Continuous Deployment (CD) pipelines automate the process of testing, building, and deploying code, ensuring faster and more reliable development cycles.
+Continuous Integration (CI) and Continuous Deployment (CD) pipelines automate the process of testing, building, and deploying code.  
+They ensure faster deployment, detect errors early through automated testing, and maintain consistent builds across environments.
 
-### Importance for the Project:
+### Tools and Technologies
 
-- Detects errors early through automated testing.
-- Reduces manual deployment errors and increases efficiency.
-- Ensures consistent builds across development, staging, and production environments.
-
-### Tools & Technologies:
-
-- **GitHub Actions:** Automates workflows such as testing and deployment on code commits.
+- **GitHub Actions:** Automates workflows including testing, building, and deployment.
 - **Docker:** Provides consistent containerized environments for development and deployment.
-- **Celery & Redis:** Supports asynchronous task handling as part of the deployment pipeline.
+- **Celery & Redis:** Supports asynchronous task handling as part of automated pipelines.
 
-=======
-
-# airbnb-clone-project
-
-ALX ProDev backend-focused learning project
-
-> > > > > > > 855423b59fb3a88032f10963d000615a61256de0
+---
