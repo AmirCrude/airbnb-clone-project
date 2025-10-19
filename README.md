@@ -96,6 +96,64 @@ It provides tools for handling authentication, ORM (Object Relational Mapping), 
 
 **React.js** — A JavaScript library for building interactive user interfaces that consume data from the backend API.
 
+## 🗄️ Database Design
+
+The Airbnb Clone project uses a **relational database model** to efficiently store and manage data.  
+Below is an overview of the core entities, their key fields, and relationships between them.
+
+---
+
+### 🧍 User
+
+Represents individuals using the platform — either as guests or hosts.
+
+**Key Fields:**
+
+- `id` — Unique identifier for each user.
+- `username` — The user’s chosen display name.
+- `email` — Used for authentication and notifications.
+- `password` — Securely hashed user password.
+- `role` — Defines if the user is a _guest_ or _host_.
+
+**Relationships:**
+
+- A **user** can own multiple **properties**.
+- A **user** can make multiple **bookings**.
+
+---
+
+### 🏠 Property
+
+Represents the listings created by hosts.
+
+**Key Fields:**
+
+- `id` — Unique identifier for each property.
+- `owner_id` — Foreign key linking to the `User` who owns it.
+- `title` — Property name or title.
+- `description` — Details about the property.
+- `price_per_night` — Cost per night of stay.
+
+**Relationships:**
+
+- A **property** belongs to one **user (host)**.
+- A **property** can have multiple **bookings** and **reviews**.
+
+---
+
+### 📅 Booking
+
+Represents a reservation made by a user for a property.
+
+**Key Fields:**
+
+- `id` — Unique identifier for each booking.
+- `user_id` — Foreign key linking to the user who booked.
+- `property_id` — Foreign key linking to the property booked.
+- `check_in_date` — Start date of stay.
+- `check_out_date` — End date of stay.
+- `status` — Indicates if the booking is _pending_, _confirmed_, or _cancelled_.
+
 =======
 
 # airbnb-clone-project
