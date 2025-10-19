@@ -154,6 +154,33 @@ Represents a reservation made by a user for a property.
 - `check_out_date` — End date of stay.
 - `status` — Indicates if the booking is _pending_, _confirmed_, or _cancelled_.
 
+## 🚀 Feature Breakdown
+
+### 1. User Management
+
+Handles user registration, authentication, and profile management.  
+It allows users to create accounts, securely log in, and manage personal details, forming the foundation for interacting with the platform.
+
+### 2. Property Management
+
+Allows hosts to create, update, and delete property listings.  
+This feature ensures that property data, availability, and pricing are accurately maintained for potential guests.
+
+### 3. Booking System
+
+Manages reservations made by users for properties.  
+It tracks check-in and check-out dates, booking status, and ensures that availability is properly updated.
+
+### 4. Payment Processing
+
+Handles all financial transactions related to bookings.  
+This feature ensures secure and reliable payments while recording transaction history for users and hosts.
+
+### 5. Review System
+
+Enables users to post ratings and feedback for properties they have stayed at.  
+It helps maintain quality, builds trust among users, and informs future guests about the property experience.
+
 =======
 
 # airbnb-clone-project
