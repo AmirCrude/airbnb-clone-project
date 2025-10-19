@@ -192,6 +192,22 @@ Ensuring the security of backend APIs is critical to protect user data, financia
 - **Rate Limiting:** Prevents abuse by limiting the number of requests a user or client can make within a time period, mitigating denial-of-service attacks.
 - **Data Validation & Encryption:** Protects sensitive information like passwords and payment data from being compromised.
 
+## ⚙️ CI/CD Pipeline
+
+Continuous Integration (CI) and Continuous Deployment (CD) pipelines automate the process of testing, building, and deploying code, ensuring faster and more reliable development cycles.
+
+### Importance for the Project:
+
+- Detects errors early through automated testing.
+- Reduces manual deployment errors and increases efficiency.
+- Ensures consistent builds across development, staging, and production environments.
+
+### Tools & Technologies:
+
+- **GitHub Actions:** Automates workflows such as testing and deployment on code commits.
+- **Docker:** Provides consistent containerized environments for development and deployment.
+- **Celery & Redis:** Supports asynchronous task handling as part of the deployment pipeline.
+
 =======
 
 # airbnb-clone-project
