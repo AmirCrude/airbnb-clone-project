@@ -181,6 +181,17 @@ This feature ensures secure and reliable payments while recording transaction hi
 Enables users to post ratings and feedback for properties they have stayed at.  
 It helps maintain quality, builds trust among users, and informs future guests about the property experience.
 
+## 🔒 API Security
+
+Ensuring the security of backend APIs is critical to protect user data, financial transactions, and system integrity.
+
+### Key Security Measures:
+
+- **Authentication (JWT):** Verifies the identity of users before granting access to endpoints, preventing unauthorized access.
+- **Authorization:** Ensures users can only perform actions they are permitted to (e.g., a guest cannot edit another host's property).
+- **Rate Limiting:** Prevents abuse by limiting the number of requests a user or client can make within a time period, mitigating denial-of-service attacks.
+- **Data Validation & Encryption:** Protects sensitive information like passwords and payment data from being compromised.
+
 =======
 
 # airbnb-clone-project
