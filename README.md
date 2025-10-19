@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## 👥 Team Roles
 
 ### 1. Backend Developer
@@ -55,3 +56,7 @@
 - Analyze project requirements and translate them into technical specifications.
 - Bridge communication between stakeholders and the development team.
 - Define KPIs and evaluate project performance against objectives.
+=======
+# airbnb-clone-project
+ALX ProDev backend-focused learning project
+>>>>>>> 855423b59fb3a88032f10963d000615a61256de0
